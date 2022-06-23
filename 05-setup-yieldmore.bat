@@ -1,4 +1,4 @@
-IF EXIST "yieldmore_www.zip" (
+IF EXIST "yieldmore.zip" (
 	echo "zip found"
 ) ELSE (
 	powershell -Command "Invoke-WebRequest https://bitbucket.org/amadeus/yieldmore/get/master.zip -OutFile yieldmore.zip"
