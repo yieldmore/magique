@@ -1,10 +1,10 @@
 IF EXIST "yieldmore_www.zip" (
 	echo "zip found"
 ) ELSE (
-	powershell -Command "Invoke-WebRequest https://bitbucket.org/yieldmore/www/get/master.zip -OutFile yieldmore_www.zip"
+	powershell -Command "Invoke-WebRequest https://bitbucket.org/amadeus/yieldmore/get/master.zip -OutFile yieldmore.zip"
 )
 
-IF EXIST "localhost\yieldmore\www" (
+IF EXIST "localhost\yieldmore" (
 	echo "localhost folder found"
 	GOTO :before_pause
 )
@@ -20,10 +20,9 @@ IF EXIST "yieldmore" (
 )
 
 :in_ym
-cd yieldmore
 tar -zxvf "..\..\yieldmore_www.zip"
 REM TODO: FIX BUG!
-for /d %D IN ("yieldmore*") do ren "%D" "www"
+for /d %D IN ("yieldmore*") do ren "%D" "yieldmore"
 echo "localhost yieldmore folder extracted"
 
 :before_pause
