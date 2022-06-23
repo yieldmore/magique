@@ -1,7 +1,7 @@
 IF EXIST "amadeus.zip" (
 	echo "zip found"
 ) ELSE (
-	powershell -Command "Invoke-WebRequest https://bitbucket.org/yieldmore/amadeus/get/master.zip -OutFile amadeus.zip"
+	powershell -Command "Invoke-WebRequest https://bitbucket.org/amadeusweb/amadeus/get/master.zip -OutFile amadeus.zip"
 )
 
 IF EXIST "localhost\amadeus" (
